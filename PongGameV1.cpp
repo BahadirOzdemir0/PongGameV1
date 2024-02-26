@@ -6,14 +6,14 @@
 #include<unistd.h>
 
 
-//kullanýnlan fonksiyonlar
+//kullanÃ½nlan fonksiyonlar
 void OyunAlani(); 
 void gotoxy(short x,short y);
 void puanyazdir();
 void paletciz();
 
 
-void gotoxy(short x,short y)  //istenen sütun ve satýra gitmek için
+void gotoxy(short x,short y)  //istenen sÃ¼tun ve satÃ½ra gitmek iÃ§in
 {
 		
 	HANDLE hConsoleOutput;
@@ -23,7 +23,7 @@ void gotoxy(short x,short y)  //istenen sütun ve satýra gitmek için
 }
 void OyunAlani()
 {
-//oyun alaný çizdirir
+//oyun alanÃ½ Ã§izdirir
 
 	for(int i =1;i<=120;i++)
 	{
@@ -49,7 +49,7 @@ void OyunAlani()
 	}
 	//---------------------------------
 }
-void puanyazdir(int sagoyuncu,int soloyuncu)  //sað ve sol oyuncunun puanlarýný sað köþeye yazar
+void puanyazdir(int sagoyuncu,int soloyuncu)  //saÃ° ve sol oyuncunun puanlarÃ½nÃ½ saÃ° kÃ¶Ã¾eye yazar
 {
 	gotoxy(122,1);
 	printf("PLAYER1:%d",sagoyuncu);  
@@ -57,7 +57,7 @@ void puanyazdir(int sagoyuncu,int soloyuncu)  //sað ve sol oyuncunun puanlarýný 
 	gotoxy(122,4);
 	printf("PLAYER2:%d",soloyuncu);
 }
-void paletciz(int solx,int soly,int sagx,int sagy)   //sað ve sola oyun baþlamadan önce palet çizer
+void paletciz(int solx,int soly,int sagx,int sagy)   //saÃ° ve sola oyun baÃ¾lamadan Ã¶nce palet Ã§izer
 {
 
 	for(int i=soly-2;i<=soly+2;i++) 
@@ -80,7 +80,7 @@ main()
 	Sleep(2000);
 	
 	int soloyuncu=0,sagoyuncu=0; 
-	//Sað ve sol oyuncunun puanlarý
+	//SaÃ° ve sol oyuncunun puanlarÃ½
 	
 	while(1)
 	{
@@ -91,14 +91,14 @@ main()
 
 		srand(clock());
 		
-		int top = rand()%2;//top 1 ise sola gide 0 ise saða
+		int top = rand()%2;//top 1 ise sola gide 0 ise saÃ°a
 		
-		int top2,top3;   //top 3 en son düz mü yoksa çapraz mý gideceðini belirler
+		int top2,top3;   //top 3 en son dÃ¼z mÃ¼ yoksa Ã§apraz mÃ½ gideceÃ°ini belirler
 		
-		top2=rand()%2;   //top2 1 ise hep yukarý eðimle gider 0 ise aþaðý eðimle gider
+		top2=rand()%2;   //top2 1 ise hep yukarÃ½ eÃ°imle gider 0 ise aÃ¾aÃ°Ã½ eÃ°imle gider
 	
 	
-		int solx=4,soly=15,sagx=117,sagy=15,durumsa=9,durumso=9;  //durumsa 1 yukarý 0 aþaðý
+		int solx=4,soly=15,sagx=117,sagy=15,durumsa=9,durumso=9;  //durumsa 1 yukarÃ½ 0 aÃ¾aÃ°Ã½
 		int zorluk=12;
 		int bitti=1;
 		char tus;
@@ -182,7 +182,7 @@ main()
 			
 			Sleep(20);
 		
-			//paletin aþaðý yukarý ayarý------
+			//paletin aÃ¾aÃ°Ã½ yukarÃ½ ayarÃ½------
 			if(durumsa==1)
 			{
 
@@ -236,7 +236,7 @@ main()
 					
 					sagy--;
 					
-					for (int i=sagy-2;i<=sagy+2;i++)//paleti çizer
+					for (int i=sagy-2;i<=sagy+2;i++)//paleti Ã§izer
 					{
 						gotoxy(sagx,i);
 						printf("%c",221);
@@ -263,7 +263,7 @@ main()
 				}
 			}
 
-			//top bölgesi!!!!! 1 sol 0 sað  printf("%c",248);-------------------------------------------------------------------------------------------------
+			//top bÃ¶lgesi!!!!! 1 sol 0 saÃ°  printf("%c",248);-------------------------------------------------------------------------------------------------
 
 			if(top==1)
 			{ ///soloa gidioyr
@@ -271,12 +271,12 @@ main()
 			
 		
 				if(top2==1)
-				{//top hep yukarý eðimle gider
+				{//top hep yukarÃ½ eÃ°imle gider
 				
 					top3=rand()%zorluk;
 				
 					if(top3==0)
-					{//%20 ihtimalle çapraz gitcek
+					{//%20 ihtimalle Ã§apraz gitcek
 						gotoxy(tx,ty);
 						printf(" ");
 					
@@ -288,7 +288,7 @@ main()
 					
 					}
 					else
-					{///80 ihtimalle düz				
+					{///80 ihtimalle dÃ¼z				
 				
 						gotoxy(tx,ty);
 						printf(" ");
@@ -301,11 +301,11 @@ main()
 				
 				}
 				else if(top2==0)
-				{// hep aþaðý eðimle gidecek
+				{// hep aÃ¾aÃ°Ã½ eÃ°imle gidecek
 				
 					top3=rand()%zorluk;
 					if(top3==0)
-					{//%20 ihtimalle çapraz gitcek
+					{//%20 ihtimalle Ã§apraz gitcek
 						gotoxy(tx,ty);
 						printf(" ");
 						
@@ -316,7 +316,7 @@ main()
 						printf("%c",184);	
 					}
 					else
-					{///80 ihtimalle düz				
+					{///80 ihtimalle dÃ¼z				
 				
 						gotoxy(tx,ty);
 						printf(" ");
@@ -331,15 +331,15 @@ main()
 		
 			}
 			else if(top==0)
-			{//top saða gitcek
+			{//top saÃ°a gitcek
 		
 				if(top2==1)
-				{//top hep yukarý eðimle gider
+				{//top hep yukarÃ½ eÃ°imle gider
 	
 					top3=rand()%zorluk;
 					
 					if(top3==0)
-					{//%20 ihtimalle çapraz gitcek
+					{//%20 ihtimalle Ã§apraz gitcek
 						gotoxy(tx,ty);
 						printf(" ");
 						
@@ -351,7 +351,7 @@ main()
 						
 					}
 					else
-					{///80 ihtimalle düz				
+					{///80 ihtimalle dÃ¼z				
 					
 						gotoxy(tx,ty);
 						printf(" ");
@@ -364,11 +364,11 @@ main()
 		
 				}
 				else if(top2==0)
-				{// hep aþaðý eðimle gidecek
+				{// hep aÃ¾aÃ°Ã½ eÃ°imle gidecek
 					
 					top3=rand()%zorluk;
 					if(top3==0)
-					{//%20 ihtimalle çapraz gitcek
+					{//%20 ihtimalle Ã§apraz gitcek
 						gotoxy(tx,ty);
 						printf(" ");
 						
@@ -380,7 +380,7 @@ main()
 						
 					}
 					else
-					{///80 ihtimalle düz				
+					{///80 ihtimalle dÃ¼z				
 					
 						gotoxy(tx,ty);
 						printf(" ");
